@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.codepath.simpletodo.R;
+
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -41,44 +43,18 @@ public class MainActivity extends Activity {
         readItems(); // <---- Add this line
         itemsAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, items);
-        setupListViewListener();
-
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCompletionActivity();
-            }
-        }};
-    }
 
 
 
-    public void openCompletionActivity() {
-        Intent intent = new Intent(this,CompletionActivity.class);
-        startActivity(intent);
-
-    }
+        };
 
 
 
-    private void setupListViewListener() {
-        lvItems.setOnItemLongClickListener(
-                new AdapterView.OnItemLongClickListener() {
-                    @Override
-                    public boolean onItemLongClick(AdapterView<?> adapter,
-                                                   View item, int pos, long id) {
-                        // Remove the item within array at position
-                        items.remove(pos);
-                        // Refresh the adapter
-                        itemsAdapter.notifyDataSetChanged();
-                        // Return true consumes the long click event (marks it handled)
-                        writeItems();
-                        return true;
-                    }
 
-                });
-    }
+
+
+
+
 
     public void onAddItem(View v) {
         EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
