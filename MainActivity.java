@@ -1,4 +1,6 @@
-package com.example.myapplication;
+package com.aatir.simpletodo;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,8 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-
-import com.example.myapplication.R;
 
 import org.apache.commons.io.FileUtils;
 
@@ -26,26 +26,16 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // ADD HERE
         lvItems = (ListView) findViewById(R.id.lvItems);
         items = new ArrayList<String>();
-        readItems();
         itemsAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, items);
         lvItems.setAdapter(itemsAdapter);
         items.add("First Item");
         items.add("Second Item");
-        setupListViewListener();
     }
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
+    // Attaches a long click listener to the listview
     private void setupListViewListener() {
         lvItems.setOnItemLongClickListener(
                 new AdapterView.OnItemLongClickListener() {
@@ -56,8 +46,8 @@ public class MainActivity extends Activity {
                         items.remove(pos);
                         // Refresh the adapter
                         itemsAdapter.notifyDataSetChanged();
-                        // Return true consumes the long click event (marks it handled)
                         writeItems();
+                        // Return true consumes the long click event (marks it handled)
                         return true;
                     }
 
