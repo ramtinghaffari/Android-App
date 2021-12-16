@@ -5,25 +5,13 @@
     tools:context=".MainActivity">
 
     <ListView
-        android:id="@+id/lvItems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnAddItem"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:id="@+id/lvItems"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="-3dp"
-        android:layout_marginBottom="3dp">
-
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Open completion task" />
-    </ListView>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/btnAddItem" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -38,13 +26,14 @@
         android:layout_alignParentBottom="true" />
 
     <Button
-        android:id="@+id/btnAddItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:text="Add Item"
+        android:id="@+id/btnAddItem"
         android:layout_alignParentBottom="true"
-        android:text="Add Item" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,7 +43,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:onClick="onAddItem"
-        tools:ignore="DuplicateIds" />
+        />
+
 
 
 </RelativeLayout>
+
