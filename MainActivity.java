@@ -8,8 +8,10 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.apache.commons.io.FileUtils;
 
@@ -21,6 +23,11 @@ public class MainActivity extends Activity {
     private ArrayList<String> items;
     private ArrayAdapter<String> itemsAdapter;
     private ListView lvItems;
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +41,34 @@ public class MainActivity extends Activity {
         lvItems.setAdapter(itemsAdapter);
         items.add("First Item");
         items.add("Second Item");
+
+        Button btn = (Button)findViewById(R.id.button7);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView txl = (TextView) findViewById(R.id.textView4);
+                txl.setText("Help");
+            }
+        });
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Attaches a long click listener to the listview
     private void setupListViewListener() {
         lvItems.setOnItemLongClickListener(
