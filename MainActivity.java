@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 TextView txl = (TextView) findViewById(R.id.textView4);
-                txl.setText("Help");
+                txl.setText("\n\n\n\n\n\n\n\n\nThis is a unique ToDoList app! It will allow you to \n capture daily tasks while competing with a friend at the same time!" );
             }
         });
 
